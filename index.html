@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com;">
     <title>Dominic Kudom | GeoSpatial Developer</title>
     <meta name="description" content="Professional GeoSpatial Developer specializing in geospatial analysis, mapping solutions, and spatial data management.">
     <meta property="og:title" content="Dominic Kudom | GeoSpatial Developer">
@@ -463,24 +464,6 @@
     }
     </script>
     <script type="module" src="js/globe.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const aboutSection = document.getElementById('about');
-            const aboutLink = document.querySelector('a[href="#about"]');
-            
-            // Close about section when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!aboutSection.contains(e.target) && e.target !== aboutLink) {
-                    aboutSection.classList.remove('visible');
-                }
-            });
-
-            // Toggle about section
-            aboutLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                aboutSection.classList.toggle('visible');
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
