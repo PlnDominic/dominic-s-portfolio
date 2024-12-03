@@ -275,6 +275,92 @@
             opacity: 0.8;
         }
 
+        .services-section {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            z-index: 15;
+            display: none;
+            text-align: left;
+            line-height: 1.7;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+        }
+
+        .services-section.visible {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid rgba(78, 205, 196, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(78, 205, 196, 0.1);
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -462,6 +548,10 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -581,6 +671,85 @@
                     <h3 class="project-title">Mobile App UI</h3>
                     <span class="project-category">React Native</span>
                 </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="services-section" id="services">
+        <h2>Services</h2>
+        <p>Specialized geospatial and web development solutions tailored to your needs.</p>
+        
+        <div class="services-grid">
+            <article class="service-card">
+                <div class="service-icon">🌍</div>
+                <h3 class="service-title">GIS Development</h3>
+                <p class="service-description">Custom GIS solutions and spatial data management systems for your organization.</p>
+                <ul class="service-features">
+                    <li>Spatial Database Design</li>
+                    <li>Custom GIS Tools</li>
+                    <li>Data Migration & ETL</li>
+                    <li>Spatial Analysis</li>
+                </ul>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🗺️</div>
+                <h3 class="service-title">Web Mapping</h3>
+                <p class="service-description">Interactive web maps and location-based applications.</p>
+                <ul class="service-features">
+                    <li>Interactive Maps</li>
+                    <li>Real-time Tracking</li>
+                    <li>Geocoding Services</li>
+                    <li>Route Optimization</li>
+                </ul>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">Data Visualization</h3>
+                <p class="service-description">Transform complex spatial data into meaningful visualizations.</p>
+                <ul class="service-features">
+                    <li>3D Visualizations</li>
+                    <li>Thematic Mapping</li>
+                    <li>Statistical Analysis</li>
+                    <li>Custom Dashboards</li>
+                </ul>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">💻</div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-description">Modern web applications with geospatial capabilities.</p>
+                <ul class="service-features">
+                    <li>Full-stack Development</li>
+                    <li>API Integration</li>
+                    <li>Responsive Design</li>
+                    <li>Performance Optimization</li>
+                </ul>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">📱</div>
+                <h3 class="service-title">Mobile Solutions</h3>
+                <p class="service-description">Location-based mobile applications for iOS and Android.</p>
+                <ul class="service-features">
+                    <li>Cross-platform Apps</li>
+                    <li>Location Services</li>
+                    <li>Offline Capabilities</li>
+                    <li>Push Notifications</li>
+                </ul>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3 class="service-title">Consulting</h3>
+                <p class="service-description">Expert guidance on geospatial technology implementation.</p>
+                <ul class="service-features">
+                    <li>Technical Assessment</li>
+                    <li>Architecture Design</li>
+                    <li>Best Practices</li>
+                    <li>Training & Support</li>
+                </ul>
             </article>
         </div>
     </div>
