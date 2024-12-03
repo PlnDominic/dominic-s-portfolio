@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.getElementById('about');
     const projectsSection = document.getElementById('projects');
-    const aboutLink = document.querySelector('a[href="#about"]');
-    const projectsLink = document.querySelector('a[href="#projects"]');
+    const aboutLink = document.querySelector('.nav-links a[href="#about"]');
+    const projectsLink = document.querySelector('.nav-links a[href="#projects"]');
     
     // Close sections when clicking outside
     document.addEventListener('click', (e) => {
@@ -46,4 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
+
+    // Log for debugging
+    console.log('About link:', aboutLink);
+    console.log('Projects link:', projectsLink);
 });
